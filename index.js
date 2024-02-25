@@ -39,3 +39,5 @@ app.use("/skills",skillsRouter);
 app.use("/user",userRouter);
 
 app.listen(PORT, ()=>console.log(`Server started at PORT: ${PORT}`));
+
+module.exports = app;
