@@ -2,19 +2,12 @@ const express = require("express");
 const Skills = require('../models/skills')
 const verifyToken = require('../middlewares/auth'); 
 const router = express.Router();
-// const multipartyForm = require('../middlewares/multipartySettings')
-// const multiparty = require("multiparty")
-const upload = require('../middlewares/multipartySettings')
+const upload = require('../controllers/multipartySettings')
 
 
 router.get("/",async (req,res)=>{
     const skillDetail = await Skills.find();
-    res.status(200).json(skillDetail);   
-    // data.forEach(element => {
-    //     console.log(element.skillType);
-    // });
-    // console.log(data);
-
+    res.status(200).json(skillDetail);
 })
 router.get("/group",async(req,res)=>{
     const skills = {}

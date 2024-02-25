@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
-
-const password  = "Prabin12"
+const dotenv = require("dotenv")
+dotenv.config()
 
 async function connectMongoDb(){
-    return mongoose.connect(`mongodb+srv://prabinsharma120:${password}@cluster0.j53rakb.mongodb.net/?retryWrites=true&w=majority`,
+    return mongoose.connect(process.env.MONGO_URI,
     // {
     //     bufferCommands: false, // Disable Mongoose buffering
     //     bufferMaxEntries: 0, // Disable Mongoose buffering
@@ -18,14 +18,3 @@ async function connectMongoDb(){
 }
 
 module.exports = {connectMongoDb};
-// Password: Prabin12
-
-// mongoose.connect(uri, {
-//     bufferCommands: false, // Disable Mongoose buffering
-//     bufferMaxEntries: 0, // Disable Mongoose buffering
-//     useNewUrlParser: true,
-//     useUnifiedTopology: true,
-//     serverSelectionTimeoutMS: 10000, // Timeout for server selection
-//     socketTimeoutMS: 45000, // Timeout for socket connections
-//   });
-  

@@ -2,11 +2,11 @@ const express = require("express");
 const About = require('../models/about')
 const verifyToken = require('../middlewares/auth')
 const router = express.Router();
-const multipartyForm = require('../middlewares/multipartySettings')
+const multipartyForm = require('../controllers/multipartySettings')
 
 
 router.get("/",async (req,res)=>{
-    const about = await About.findOne().sort("-timestamp");   
+    const about = await About.findOne().sort("-createdAt");   
     res.status(200).json(about);
 })
 

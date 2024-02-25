@@ -2,19 +2,13 @@ const express = require("express");
 const {SocialLink,ContactForm } = require('../models/contact')
 const router = express.Router();
 
-const mailSender = require('../middlewares/gmail')
+const mailSender = require('../controllers/gmail')
 
 router.get("/social-link/:name",async (req,res)=>{
     const name = req.params.name;
     const link = await SocialLink.findOne({name});
     res.status(200).json(link);
 })
-
-// router.get("/",async(req,res)=>{
-//     const info = await mailSender()
-//     .catch(e=>console.log(e));
-//     return res.json(info);
-// })
 
 router.post("/",async(req,res)=>{
     const {name,email,message} = req.body;

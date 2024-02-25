@@ -7,12 +7,13 @@ const experienceRouter = require("./routes/experience")
 const personalProjectRouter = require("./routes/personalProject")
 const skillsRouter = require("./routes/skills")
 const cors = require("cors")
-
+const dotenv = require('dotenv');
+dotenv.config()
 
 // const router = express.Router();
 const app = express();
 // const {PORT} = process.env;
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 // Connections
 connectMongoDb();
