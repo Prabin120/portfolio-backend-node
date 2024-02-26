@@ -2,7 +2,7 @@ const express = require("express");
 const Skills = require('../models/skills')
 const verifyToken = require('../middlewares/auth'); 
 const router = express.Router();
-const upload = require('../controllers/multipartySettings')
+const upload = require('../controllers/multerSettings')
 
 
 router.get("/",async (req,res)=>{

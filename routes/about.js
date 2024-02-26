@@ -2,7 +2,7 @@ const express = require("express");
 const About = require('../models/about')
 const verifyToken = require('../middlewares/auth')
 const router = express.Router();
-const multipartyForm = require('../controllers/multipartySettings')
+const multipartyForm = require('../controllers/multerSettings')
 
 
 router.get("/",async (req,res)=>{

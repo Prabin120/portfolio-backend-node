@@ -6,6 +6,7 @@ const contactRouter = require("./routes/contact")
 const experienceRouter = require("./routes/experience")
 const personalProjectRouter = require("./routes/personalProject")
 const skillsRouter = require("./routes/skills")
+const resumeRouter = require("./routes/resume")
 const cors = require("cors")
 const dotenv = require('dotenv');
 dotenv.config()
@@ -37,6 +38,7 @@ app.use("/experience",experienceRouter);
 app.use("/personal-projects",personalProjectRouter);
 app.use("/skills",skillsRouter);
 app.use("/user",userRouter);
+app.use("/resume",resumeRouter);
 
 app.listen(PORT, ()=>console.log(`Server started at PORT: ${PORT}`));
 
